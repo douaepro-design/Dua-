@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Cold Light</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0b1a;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #a855f7;
+}
+
+.price {
+  font-size: 40px;
+  color: #22c55e;
+  margin: 15px 0;
+}
+
+/* الصور جنب بعض */
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.images img {
+  width: 45%;
+  max-width: 250px;
+  border-radius: 15px;
+}
+
+.box {
+  background: #111;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 15px;
+}
+
+form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  background: #a855f7;
+  color: white;
+  padding: 15px;
+  border: none;
+  width: 90%;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Car Cold Light</h1>
+<p>إضافة إضاءة داخلية فخمة لسيارتك</p>
+
+<!-- الصور -->
+<div class="images">
+  <img src="image1.jpg">
+  <img src="image2.jpg">
+</div>
+
+<!-- الثمن -->
+<div class="price">158 درهم</div>
+
+<!-- الفورم -->
+<div class="box">
+  <h2>اطلب الآن</h2>
+
+  <form onsubmit="sendToWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="الإسم الكامل" required>
+    <input type="text" id="city" placeholder="المدينة" required>
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+    <input type="text" id="address" placeholder="العنوان" required>
+    <button type="submit">إرسال الطلب</button>
+  </form>
+</div>
+
+<!-- معلومات المنتج -->
+<div class="box">
+  <h2>المميزات</h2>
+  <p>✔ طول 5 متر</p>
+  <p>✔ سهل التركيب</p>
+  <p>✔ يعطي شكل فاخر</p>
+</div>
+
+<div class="box">
+  <h2>التوصيل</h2>
+  <p>🚚 التوصيل مجاني لجميع المدن</p>
+</div>
+
+</div>
+
+<!-- زر واتساب -->
+<a class="whatsapp" href="https://wa.me/212644103256" target="_blank">
+💬 تواصل معنا
+</a>
+
+<script>
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var city = document.getElementById("city").value;
+  var phone = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+
+  var message = "طلب جديد:%0A"
+    + "المنتج: Car Cold Light (5m)%0A"
+    + "الثمن: 158 درهم%0A"
+    + "--------------------%0A"
+    + "الاسم: " + name + "%0A"
+    + "المدينة: " + city + "%0A"
+    + "الهاتف: " + phone + "%0A"
+    + "العنوان: " + address;
+
+  var url = "https://wa.me/212644103256?text=" + message;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
